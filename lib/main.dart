@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    final String testing;
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(

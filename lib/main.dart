@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
    String pullRequest;
+   String sdfsd;
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(

@@ -18,22 +18,30 @@ class _UserListState extends State<UserList> {
     //  print(userList?.docs);
 
     if (userList != null) {
-      //   List<Object?> list =  userList.docs.map((e) => e.data()).toList();
-        
-     
-      // var docs = userList.docs.map((doc) => doc.data());
 
-  
+      //  var docs = userList.docs.map((doc) { 
+      //   return doc.data() as Map<String, dynamic>;
        
+      //    });
+       
+      //  var doc1 = docs.map((e) {
+         
+      //    return UserModal.fromJson(e);
+      //  });
+
+
+      //  print(doc1.map((e) => e.name));
+      
+
       for (var doc in userList.docs) {
+        Map<String, dynamic> obj = doc.data() as Map<String, dynamic>;
 
-         Map<String, dynamic> obj = doc.data() as Map<String, dynamic>;
-        
-        
-       var result = UserModal.fromJson(obj);
+        var result = UserModal.fromJson(obj);
 
-       print(result.uid);
+        print(result.name);
       }
+
+
     }
 
     return Container();

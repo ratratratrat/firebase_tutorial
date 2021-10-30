@@ -27,12 +27,6 @@ class DatabaseService {
     return userCollection.snapshots();
   }
 
-  //   Stream<List<UserModal>> getUserList() {
-  //   return userCollection
-  //       .snapshots()
-  //       .map((snapShot) => snapShot.docs
-  //       .map((e) => UserModal.fromJson(e.data))
-  //       .toList());
-  // }
+
 
 }

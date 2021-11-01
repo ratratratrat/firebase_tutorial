@@ -19,12 +19,16 @@ class DatabaseService {
   // set List of User
 
 
-
+List<UserModal> _userlistfromModal (QuerySnapshot snapshot){
+  return snapshot.docs.map((e) {
+      return UserModal.fromJson(e.data() as Map<String, dynamic>);
+  }).toList();
+}
 
 // get Firebase Stream
   
-  Stream<QuerySnapshot> get doc {
-    return userCollection.snapshots();
+  Stream<List<UserModal>> get doc {
+    return userCollection.snapshots().map(_userlistfromModal);
   }
 
 

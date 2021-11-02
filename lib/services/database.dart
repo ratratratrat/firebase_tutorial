@@ -25,6 +25,20 @@ List<UserModal> _userlistfromModal (QuerySnapshot snapshot){
   }).toList();
 }
 
+
+// get Docutment from snapshot
+
+UserModal _userDocSnap (DocumentSnapshot snapshot){
+  return UserModal.fromJson(snapshot.data() as Map<String, dynamic>); 
+}
+
+
+// get user doc sgtream
+
+Stream<UserModal> get docSnap {
+  return userCollection.doc(uid).snapshots().map(_userDocSnap);
+}
+ 
 // get Firebase Stream
   
   Stream<List<UserModal>> get doc {

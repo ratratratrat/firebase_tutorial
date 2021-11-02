@@ -114,7 +114,7 @@ class _SettingsFormState extends State<SettingsForm> {
                             currentEmail ??= userData!.email;
                             
 
-                       //     await result = DatabaseService(userData!.uid).updateUserData(currentName!,currentEmail!);
+                         //   await result = DatabaseService(userData!.uid).updateUserData(currentName!,currentEmail!);
                             print(currentName);
                             print(currentEmail);
                             print(currentSugar);

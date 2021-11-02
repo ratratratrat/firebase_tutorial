@@ -8,6 +8,9 @@ import 'package:provider/provider.dart';
 
 import 'constants.dart';
 
+// thestsed
+// cdoner deals vscode
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -23,9 +26,7 @@ class MyApp extends StatelessWidget {
     return StreamProvider<User?>.value(
       value: AuthService().user,
       initialData: null,
-      child: MaterialApp(
-        home: Wrapper()
-      ),
+      child: MaterialApp(home: Wrapper()),
     );
   }
 }

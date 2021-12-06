@@ -4,6 +4,7 @@ import 'package:firebase_tutorial/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_tutorial/constants.dart';
 import 'package:provider/provider.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 class SettingsForm extends StatefulWidget {
   const SettingsForm({Key? key}) : super(key: key);
@@ -16,8 +17,8 @@ class _SettingsFormState extends State<SettingsForm> {
   final _formKey = GlobalKey<FormState>();
   final List<String> sugars = ['0', '1', '2', '3', '4', '5'];
 
-   String? currentName;
-   String? currentEmail;
+  String? currentName;
+  String? currentEmail;
   String? currentSugar;
   int currentStrength = 100;
 
@@ -35,6 +36,12 @@ class _SettingsFormState extends State<SettingsForm> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
+                    QrImage(
+                      data: user.uid,
+                      version: QrVersions.auto,
+                      size: 200.0,
+                      // embeddedImage: AssetImage('assets/images/midland.png'),
+                    ),
                     Text(
                       'Update Settings',
                       style: TextStyle(fontSize: 20),
@@ -101,26 +108,25 @@ class _SettingsFormState extends State<SettingsForm> {
                         onPressed: () async {
                           if (_formKey.currentState!.validate()) {
                             //   await Future.delayed(Duration(seconds: 3));
-                            if (currentSugar == null) {
-                              currentSugar = '0';
-                            }
+                            // if (currentSugar == null) {
+                            //   currentSugar = '0';
+                            // }
 
-                            if (currentStrength == null) {
-                              currentStrength = 100;
-                            }
+                            // if (currentStrength == null) {
+                            //   currentStrength = 100;
+                            // }
 
-                            currentName ??= userData!.name;
+                            // currentName ??= userData!.name;
 
-                            currentEmail ??= userData!.email;
-                            
+                            // currentEmail ??= userData!.email;
 
-                         //   await result = DatabaseService(userData!.uid).updateUserData(currentName!,currentEmail!);
-                            print(currentName);
-                            print(currentEmail);
-                            print(currentSugar);
-                            print(currentStrength);
+                            await DatabaseService(userData!.uid).updateUserData(
+                                currentName ?? userData.name,
+                                currentEmail ?? userData.email);
+                            Navigator.pop(context);
                           }
                         }),
+                    SizedBox(height: 30),
                   ],
                 ),
               ),

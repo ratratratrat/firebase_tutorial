@@ -20,12 +20,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final AuthService _auth = AuthService();
 
-
   @override
   Widget build(BuildContext context) {
     void _showSettingsPanel() {
       showModalBottomSheet(
-          
           context: context,
           builder: (context) {
             return Container(
@@ -61,7 +59,14 @@ class _HomeState extends State<Home> {
           title: Text('Hooome Title'),
           backgroundColor: Colors.lightBlue,
         ),
-        body: UserList(),
+        body: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/midland.png'),
+                fit: BoxFit.fitWidth,
+              ),
+            ),
+            child: UserList()),
       ),
     );
   }

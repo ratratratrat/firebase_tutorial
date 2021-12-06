@@ -8,11 +8,6 @@ import 'package:provider/provider.dart';
 
 import 'constants.dart';
 
-// thestsed
-// cdoner deals vscodejsfsa
-//sfjnsdf
-
-//terat1
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();

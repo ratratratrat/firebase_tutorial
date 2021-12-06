@@ -12,7 +12,15 @@ class UserTile extends StatelessWidget {
       padding: EdgeInsets.all(8),
       child: Card(
         child: ListTile(
-          leading: CircleAvatar(radius: 25, backgroundColor: Colors.brown),
+          leading: CircleAvatar(
+            radius: 30,
+            backgroundColor: Colors.brown,
+            child: CircleAvatar(
+              radius: 25,
+              backgroundColor: Colors.brown,
+              backgroundImage: AssetImage('assets/images/sotherby.png'),
+            ),
+          ),
           title: Text(userlist.name),
           subtitle: Text(userlist.email),
         ),

@@ -78,7 +78,7 @@ class _RegisterState extends State<Register> {
                       ElevatedButton(
                           onPressed: () async {
                             if (_formKey.currentState!.validate()) {
-                            //   await Future.delayed(Duration(seconds: 3));
+                              //   await Future.delayed(Duration(seconds: 3));
                               setState(() {
                                 loading = true;
                               });
@@ -91,7 +91,7 @@ class _RegisterState extends State<Register> {
                                   error = 'Register fail';
                                   loading = false;
                                 });
-                              } 
+                              }
                             } else {
                               print(email);
                               print(password);
